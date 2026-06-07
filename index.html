@@ -1,68 +1,39 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的第一个页面</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        p {
-            margin-bottom: 16px;
-            font-size: 17px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
-        .btn:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            margin-top: 30px;
-            text-align: center;
-            font-size: 14px;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>👋 你好，这是我的第一个网页</h1>
-        <p>这是一个纯 HTML + CSS 页面，没有用到任何复杂框架，直接可用。</p>
-        <p>你可以把这段代码保存为 <strong>index.html</strong>，双击在浏览器打开，或者拖到 Cloudflare Pages 快速上线。</p>
-        <a href="#" class="btn">了解更多</a>
-        <footer>
-            &copy; 2026 我的网站 | 用 HTML 搭建
-        </footer>
-    </div>
-</body>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>首页 - 蚁迹信息</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="./index.html">蚁迹信息</a>
+      <nav>
+        <a class="active" href="./index.html">首页</a>
+        <a href="./products.html">产品介绍</a>
+        <a href="./contact.html">联系我们</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section>
+        <p class="eyebrow">Digital operations platform</p>
+        <h1>让业务系统更清晰、更高效地运转</h1>
+        <p class="lead">蚁迹信息为企业提供数据看板、自动化流程和客户协作工具，帮助团队把复杂工作整理成可执行的日常。</p>
+        <a class="button" href="./products.html">查看产品</a>
+      </section>
+      <section class="hero-panel">
+        <h2>今日概览</h2>
+        <div class="metric">
+          <span>项目交付率</span>
+          <strong>96%</strong>
+        </div>
+        <div class="metric">
+          <span>客户响应时间</span>
+          <strong>12m</strong>
+        </div>
+      </section>
+    </main>
+    <script src="./script.js"></script>
+  </body>
 </html>
