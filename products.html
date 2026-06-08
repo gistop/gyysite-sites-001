@@ -4,6 +4,148 @@
     <meta charset="UTF-8" />
     <title>产品介绍 - 星河科技</title>
     <link rel="stylesheet" href="./style.css" />
+    <style>
+      /* 卡通风格全局 */
+      body {
+        background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        font-family: 'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive, sans-serif;
+        position: relative;
+      }
+
+      body::before {
+        content: '⭐ ✨ ⭐ ✨ ⭐ ✨ ⭐';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 2rem;
+        color: rgba(255, 255, 200, 0.7);
+        pointer-events: none;
+        z-index: 0;
+        text-shadow: 2px 2px 0 #ff9a9e;
+        animation: twinkle 1.5s ease-in-out infinite alternate;
+      }
+
+      @keyframes twinkle {
+        0% { opacity: 0.6; transform: scale(1); }
+        100% { opacity: 1; transform: scale(1.1); }
+      }
+
+      .site-header {
+        background: #fff5e6;
+        border-bottom: 4px dashed #ff8c42;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 8px 0 rgba(0,0,0,0.1);
+      }
+
+      .logo {
+        font-size: 28px;
+        color: #ff6f61;
+        text-shadow: 2px 2px 0 #ffe5b4;
+        letter-spacing: 2px;
+        transform: rotate(-2deg);
+      }
+
+      nav a {
+        border-radius: 20px;
+        background: #ffe5b4;
+        color: #4a3b32;
+        font-weight: bold;
+        border: 2px solid #ff8c42;
+        box-shadow: 3px 3px 0 #ff8c42;
+        transition: all 0.2s;
+      }
+
+      nav a.active,
+      nav a:hover {
+        background: #ff8c42;
+        color: #ffffff;
+        box-shadow: 3px 3px 0 #d9661a;
+        transform: translate(-2px, -2px);
+      }
+
+      .page {
+        background: rgba(255,255,255,0.8);
+        border-radius: 40px;
+        padding: 40px;
+        margin-top: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1), inset 0 0 0 3px #ffc3a0;
+      }
+
+      .eyebrow {
+        font-family: 'Comic Sans MS', cursive;
+        color: #ff6f61;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 0 #fff;
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: #4a3b32;
+        text-shadow: 3px 3px 0 #ffd700;
+        margin-bottom: 30px;
+      }
+
+      .product-grid {
+        gap: 24px;
+      }
+
+      .product-grid article {
+        background: #fffbe6;
+        border: 3px solid #ff8c42;
+        border-radius: 30px;
+        padding: 30px;
+        box-shadow: 6px 6px 0 #ffab76, 0 0 0 4px #ff8c42;
+        transition: transform 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .product-grid article::before {
+        content: '👾';
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 3rem;
+        opacity: 0.5;
+        transform: rotate(10deg);
+      }
+
+      .product-grid article:nth-child(2)::before { content: '🤖'; }
+      .product-grid article:nth-child(3)::before { content: '🚀'; }
+
+      .product-grid article:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: 10px 10px 0 #ffab76, 0 0 0 4px #ff8c42;
+      }
+
+      .product-grid h2 {
+        color: #ff6f61;
+        font-size: 1.8rem;
+        text-shadow: 2px 2px 0 #ffe5b4;
+      }
+
+      .product-grid p {
+        color: #4a3b32;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        background: rgba(255,255,255,0.6);
+        border-radius: 12px;
+        padding: 8px;
+      }
+
+      /* 响应式 */
+      @media (max-width: 760px) {
+        .product-grid {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 2.2rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
