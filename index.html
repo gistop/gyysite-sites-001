@@ -6,6 +6,132 @@
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css" type="text/css">
     <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+    <style>
+      /* 科幻背景 */
+      body {
+        background-color: #070b19;
+        color: #e0e7ff;
+        margin: 0;
+        position: relative;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: 
+          repeating-linear-gradient(0deg, rgba(0, 200, 255, 0.03) 0px, rgba(0, 200, 255, 0.03) 1px, transparent 1px, transparent 40px),
+          repeating-linear-gradient(90deg, rgba(0, 200, 255, 0.03) 0px, rgba(0, 200, 255, 0.03) 1px, transparent 1px, transparent 40px);
+        animation: moveGrid 20s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      @keyframes moveGrid {
+        0% { background-position: 0 0; }
+        100% { background-position: 40px 40px; }
+      }
+
+      body::after {
+        content: '';
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: 
+          radial-gradient(circle at 15% 40%, rgba(100, 200, 255, 0.08) 1px, transparent 1px),
+          radial-gradient(circle at 75% 60%, rgba(100, 200, 255, 0.1) 1px, transparent 1px),
+          radial-gradient(circle at 50% 10%, rgba(200, 150, 255, 0.06) 1px, transparent 1px);
+        background-size: 150px 150px, 200px 200px, 180px 180px;
+        animation: blink 6s ease-in-out infinite alternate;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      @keyframes blink {
+        0% { opacity: 0.3; }
+        100% { opacity: 0.9; }
+      }
+
+      /* 确保内容在背景之上 */
+      .site-header, main {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* 调整 header */
+      .site-header {
+        background: rgba(7, 11, 25, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 200, 255, 0.15);
+      }
+
+      .logo {
+        color: #7dd3fc;
+      }
+
+      nav a {
+        color: #a5b4fc;
+        transition: all 0.2s;
+      }
+
+      nav a.active,
+      nav a:hover {
+        background: rgba(0, 200, 255, 0.2);
+        color: #ffffff;
+        box-shadow: 0 0 8px rgba(0, 200, 255, 0.3);
+      }
+
+      .eyebrow {
+        color: #7dd3fc;
+      }
+
+      h1 {
+        color: #f0f4ff;
+      }
+
+      .lead {
+        color: #cbd5e1;
+      }
+
+      .button {
+        background: linear-gradient(135deg, #2563eb, #7c3aed);
+        box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+        transition: all 0.2s;
+      }
+      .button:hover {
+        box-shadow: 0 0 25px rgba(59, 130, 246, 0.7);
+      }
+
+      .hero-panel {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 200, 255, 0.2);
+        box-shadow: 0 0 30px rgba(0, 200, 255, 0.1);
+        color: #e0e7ff;
+      }
+
+      .hero-panel h2 {
+        color: #7dd3fc;
+      }
+
+      .metric {
+        border-top: 1px solid rgba(0, 200, 255, 0.15);
+      }
+      .metric strong {
+        color: #7dd3fc;
+      }
+
+      #map {
+        border: 1px solid rgba(0,200,255,0.2);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* 其他 */
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
